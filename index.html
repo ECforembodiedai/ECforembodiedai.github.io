@@ -124,50 +124,8 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="100%">
-        <source src="./static/videos/tasks.m4v"
-                type="video/mp4">
-          </video>
-          </br>
-        </div>
-        <br>
-        <h2 class="subtitle has-text-centered">
-        <strong style="font-weight: 900;">FluidLab</strong> is a differentiable environment with a set of complex fluid manipulation tasks.
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-<section class="hero teaser">
-  <div class="container is-fullhd">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop height="100%">
-        <source src="./static/videos/fluidengine.m4v"
-                type="video/mp4">
-          </video>
-          </br>
-        </div>
-        <br>
-        <h2 class="subtitle has-text-centered">
-        FluidLab is powered by <strong style="font-weight: 900;">FluidEngine</strong>, a fully differentiable and multi-material physics engine, supporting rigid, elastic, plastic materials, inviscid and viscous liquid, and gaseous phenomena such as smoke.
-        </h2>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container is-fullhd">
-  <hr class="solid">
-</div>
 
 
 <section class="section">
@@ -178,13 +136,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Humans manipulate various kinds of fluids in their everyday life: creating latte art, scooping floating objects from water, rolling an ice cream cone, etc. Using robots to augment or replace human labors in these daily settings remain as a challenging task due to the multifaceted complexities of fluids. 
+            Embodied control requires agents to leverage multi-modal pre-training to quickly learn how to act in new environments, where video demonstrations contain visual and motion details needed for low-level perception and control, and language instructions support generalization with abstract, symbolic structures. While recent approaches apply contrastive learning to force alignment between the two modalities, we hypothesize better modeling their complementary differences can lead to more holistic representations for downstream adaption. 
           </p>
           <p>
-            Previous research in robotic fluid manipulation mostly consider fluids governed by an ideal, Newtonian model in simple task settings (e.g., pouring water into a container). However, the vast majority of real-world fluid systems manifest their complexities in terms of the fluid’s complex material behaviors (e.g., elastoplastic deformation) and multi-component interactions (e.g. coffee and frothed milk when making latte art), both of which were well beyond the scope of the current literature. To evaluate robot learning algorithms on understanding and interacting with such complex fluid systems, a comprehensive virtual platform with versatile simulation capabilities and well-established tasks is needed. 
+            To this end, we propose Emergent Communication for Embodied Control (EC^2), a novel scheme to pre-train video-language representations for few-shot embodied control. The key idea is to learn an unsupervised ``language'' of videos via emergent communication, which bridges the semantics of video details and structures of natural language. We learn embodied representations of video trajectories, emergent language, and natural language using a language model, which is then used to finetune a lightweight policy network for downstream control. 
           </p>
           <p>
-            In this work, we introduce FluidLab, a simulation environment with a diverse set of manipulation tasks involving complex fluid dynamics. These tasks address interactions between solid and fluid as well as among multiple fluids. At the heart of our platform is a fully differentiable physics simulator, FluidEngine, providing GPU-accelerated simulations and gradient calculations for various material types and their couplings, extending the scope of the existing differentiable simulation engines. We identify several challenges for fluid manipulation learning by evaluating a set of reinforcement learning and trajectory optimization methods on our platform. To address these challenges, we propose several domain-specific optimization schemes coupled with differentiable physics, which are empirically shown to be effective in tackling optimization problems featured by fluid system’s non-convex and non-smooth properties.
+            Through extensive experiments in Metaworld and Franka Kitchen embodied benchmarks, EC^2 is shown to consistently outperform previous contrastive learning methods for both videos and texts as task inputs. Further ablations confirm the importance of the emergent language, which is beneficial for both video and language learning, and significantly superior to using pre-trained video captions. We also present a quantitative and qualitative analysis of the emergent language and discuss future directions toward better understanding and leveraging emergent communication in embodied tasks.
           </p>
         </div>
       </div>
